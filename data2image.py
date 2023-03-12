@@ -48,6 +48,10 @@ def generate(answer_data):
     time = now.strftime('%Y%m%d-%H%M%S')
     filename = 'color_{}.jpg'.format(time)
     filepath = "temp/" + filename
+
+    if not os.path.exists("temp"):
+        os.makedirs("temp")
+
     cv2.imwrite(filepath, img)
 
     return filepath
